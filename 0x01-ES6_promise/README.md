@@ -21,5 +21,6 @@ This project focus on Promises in JavaScript ES6
 8. Throw error / try catch
 9. Throw an error
 ### Advanced:
-...
+10. Await / Async
+
 ---
