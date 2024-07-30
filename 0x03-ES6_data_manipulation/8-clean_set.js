@@ -7,7 +7,7 @@
 export default function cleanSet(set, startString) {
   const tempArray = [];
 
-  if (startString === '') return '';
+  if (startString === undefined || startString.length === 0) return '';
 
   for (const string of set.values()) {
     if (string.startsWith(startString)) {
