@@ -5,6 +5,5 @@
  * @return {boolean}
  */
 export default function hasValuesFromArray(set, array) {
-  const arraySet = new Set(array);
-  return set.isSupersetOf(arraySet);
+  return array.every((element) => set.has(element));
 }
