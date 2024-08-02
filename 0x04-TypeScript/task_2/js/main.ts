@@ -1,3 +1,4 @@
+// task 5
 interface DirectorInterface {
   workFromHome(): string;
   getCoffeeBreak(): string;
@@ -43,5 +44,18 @@ function createEmployee(salary: number | string ): Director | Teacher {
     return new Teacher();
   } else {
     return new Director();
+  }
+}
+
+//task 6
+function isDirector(employee: Director | Teacher): employee is Director {
+  return employee instanceof Director;
+}
+
+function executeWork(employee: Director | Teacher): void {
+  if (isDirector(employee)) {
+    employee.workDirectorTasks();
+  } else {
+    employee.workTeacherTasks();
   }
 }
