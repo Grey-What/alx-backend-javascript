@@ -53,8 +53,3 @@ class StudentClass implements StudentClass {
 function createStudent(constructor: StudentClassConstructor, firstName: string, lastName: string): StudentClass {
   return new constructor(firstName, lastName);
 }
-
-// Create an instance of StudentClass
-const student = createStudent(StudentClass, "John", "Doe");
-console.log(student.workOnHomework()); // Output: Currently working
-console.log(student.displayName());    // Output: John
