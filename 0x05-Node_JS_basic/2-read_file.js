@@ -1,3 +1,8 @@
+/**
+ * Count the number of students in each course
+ *
+ * @param {string} path - The path to the CSV file
+ */
 const fs = require('fs');
 
 function countStudents(path) {
