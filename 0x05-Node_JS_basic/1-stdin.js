@@ -1,12 +1,17 @@
+const isInteractive = process.stdin.isTTY;
+
 process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
-process.stdin.on('readable', () => {
-  const name = process.stdin.read();
-  if (name) {
-    process.stdout.write(`Your name is: ${name.toString().trim()}`);
+process.stdin.on('data', (name) => {
+  process.stdout.write(`Your name is: ${name.toString().trim()}`);
+
+  if (isInteractive) {
+    process.stdin.pause();
   }
 });
 
 process.stdin.on('end', () => {
-  process.stdout.write('This important software is now closing\n');
+  if (!isInteractive) {
+    process.stdout.write('This important software is now closing\n');
+  }
 });
